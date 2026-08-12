@@ -1,0 +1,10 @@
+# Security Policy & Vulnerability Disclosure
+# RFC 9116 Standard
+
+Contact: mailto:sahilalam7@outlook.com
+Contact: https://github.com/thesahilalam
+Preferred-Languages: en, hi
+Canonical: https://thesahilalam.github.io/.well-known/security.txt
+Policy: https://github.com/thesahilalam
+Acknowledgments: https://github.com/thesahilalam
+Expires: 2027-12-31T23:59:59.000Z
