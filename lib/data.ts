@@ -5,12 +5,12 @@
 
 export const PROFILE = {
   name: 'Md Sahil Alam',
-  title: 'Cybersecurity & Systems Researcher',
-  tagline: 'Cybersecurity · Networking · Building Practical Tech',
+  title: 'Aspiring Cybersecurity Analyst',
+  tagline: 'Network Security • Penetration Testing • Web Development',
   bio: [
-    'I am a Computer Science & Engineering undergraduate at Jamia Hamdard University, New Delhi, with a strong focus on Cybersecurity, Network Security, and IT Infrastructure.',
-    'My approach to technology is hands-on and practical. I spend my time in lab environments analyzing network traffic, testing wireless security protocols, auditing system configurations, and building functional software tools to automate technical tasks.',
-    'My core strength lies in technical problem solving, understanding how systems and protocols interact, debugging complex issues, and leveraging modern development workflows to build working solutions.',
+    'I am a Computer Science & Engineering undergraduate at Jamia Hamdard University, New Delhi, with a strong focus on Network Security, Penetration Testing fundamentals, and Software Development.',
+    'My approach to technology is hands-on and practical. I spend my time in lab environments analyzing network traffic, testing wireless security configurations, auditing systems, and engineering functional software utilities.',
+    'My core strength lies in technical problem solving, understanding system architectures and network protocols, and developing working security tools to solve real-world problems.',
   ],
   location: 'New Delhi, India',
   email: 'sahilalam7@outlook.com',
@@ -18,7 +18,7 @@ export const PROFILE = {
   linkedin: 'https://www.linkedin.com/in/thesahilalam/',
   instagram: 'https://www.instagram.com/thesahilalam/',
   resume: '/Sahil_Alam_Resume.pdf',
-  availability: 'Available for Internships & Contracts',
+  availability: 'Available for Internships & Projects',
 };
 
 export const EDUCATION = [

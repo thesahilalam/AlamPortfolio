@@ -49,7 +49,7 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="py-8 sm:py-10 px-5 sm:px-6 lg:px-8 relative overflow-hidden"
+      className="py-12 sm:py-16 md:py-20 lg:py-24 px-5 sm:px-8 lg:px-12 relative overflow-hidden"
       style={{ backgroundColor: 'var(--bg-primary)' }}
     >
       {/* Subtle full-bleed background */}
@@ -82,7 +82,7 @@ export default function ContactSection() {
               <img
                 src="/images/portrait-5.jpg"
                 alt="Md Sahil Alam - Contact"
-                className="w-full h-[360px] sm:h-[420px] object-cover object-top"
+                className="w-full h-[320px] sm:h-[400px] object-cover object-top"
                 loading="lazy"
               />
             </div>
@@ -107,7 +107,7 @@ export default function ContactSection() {
                 05 // Contact
               </motion.p>
               <motion.h2
-                className="text-3xl sm:text-5xl font-extrabold leading-tight"
+                className="text-2xl sm:text-4xl md:text-5xl font-extrabold leading-tight"
                 style={{ color: 'var(--text-primary)' }}
                 initial={{ opacity: 0, y: 16 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -116,7 +116,7 @@ export default function ContactSection() {
                 Let&apos;s Connect
               </motion.h2>
               <motion.p
-                className="text-base sm:text-lg leading-relaxed"
+                className="text-sm sm:text-base md:text-lg leading-relaxed"
                 style={{ color: 'var(--text-secondary)' }}
                 initial={{ opacity: 0, y: 12 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -215,6 +215,7 @@ export default function ContactSection() {
               <div className="flex items-center gap-3 flex-wrap">
                 <button
                   onClick={copyEmail}
+                  aria-label="Copy email address to clipboard"
                   className="group flex items-center gap-2.5 px-4 py-2 rounded-full border transition-all text-xs"
                   style={{
                     borderColor: 'var(--border)',

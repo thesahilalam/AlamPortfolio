@@ -14,6 +14,29 @@ const HIGHLIGHTS = [
   'Currently exploring: Android network utilities and wireless security automation',
 ];
 
+function HighlightItem({
+  item, index,
+}: { item: string; index: number }) {
+  const ref = useRef<HTMLLIElement>(null);
+  const inView = useInView(ref, { once: true, margin: '-40px' });
+  return (
+    <motion.li
+      ref={ref}
+      initial={{ opacity: 0, x: -14 }}
+      animate={inView ? { opacity: 1, x: 0 } : {}}
+      transition={{ duration: 0.45, delay: index * 0.08 }}
+      className="flex items-start gap-3 text-sm sm:text-base leading-relaxed"
+      style={{ color: 'var(--text-secondary)' }}
+    >
+      <span
+        className="w-2 h-2 rounded-full mt-2 shrink-0"
+        style={{ backgroundColor: 'var(--accent-blue)' }}
+      />
+      <span>{item}</span>
+    </motion.li>
+  );
+}
+
 function SectionEntry({
   children, index,
 }: { children: React.ReactNode; index: number }) {
@@ -38,7 +61,7 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="py-8 sm:py-10 px-5 sm:px-6 lg:px-8 relative overflow-hidden"
+      className="py-12 sm:py-16 md:py-20 lg:py-24 px-5 sm:px-8 lg:px-12 relative overflow-hidden"
       style={{ backgroundColor: 'var(--bg-secondary)' }}
     >
       {/* Subtle full-bleed background texture */}
@@ -57,7 +80,7 @@ export default function AboutSection() {
         {/* Header & Bio Grid */}
         <div ref={headerRef} className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Text Area */}
-          <div className="lg:col-span-7 space-y-5">
+          <div className="lg:col-span-7 space-y-4 sm:space-y-5">
             <motion.p
               className="section-label text-xs sm:text-sm"
               initial={{ opacity: 0, x: -14 }}
@@ -67,7 +90,7 @@ export default function AboutSection() {
               01 // Origin & Background
             </motion.p>
             <motion.h2
-              className="text-3xl sm:text-5xl font-extrabold leading-tight"
+              className="text-2xl sm:text-4xl md:text-5xl font-extrabold leading-tight"
               style={{ color: 'var(--text-primary)' }}
               initial={{ opacity: 0, y: 16 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -75,11 +98,11 @@ export default function AboutSection() {
             >
               Who I Am & What I Do
             </motion.h2>
-            <div className="space-y-4">
+            <div className="space-y-3.5 sm:space-y-4">
               {PROFILE.bio.map((para, i) => (
                 <motion.p
                   key={i}
-                  className="text-base sm:text-lg leading-relaxed"
+                  className="text-sm sm:text-base md:text-lg leading-relaxed"
                   style={{ color: 'var(--text-secondary)' }}
                   initial={{ opacity: 0, y: 14 }}
                   animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -107,7 +130,7 @@ export default function AboutSection() {
                 src="/images/portrait-4.jpg"
                 alt="Md Sahil Alam"
                 loading="lazy"
-                className="w-full h-[350px] sm:h-[420px] object-cover object-top"
+                className="w-full h-[320px] sm:h-[400px] object-cover object-top"
               />
             </div>
             {/* Ambient Blue Glow Accent */}
@@ -188,15 +211,7 @@ export default function AboutSection() {
             </div>
             <ul className="space-y-4">
               {HIGHLIGHTS.map((item, i) => (
-                <SectionEntry key={i} index={i}>
-                  <li className="flex items-start gap-3 text-sm sm:text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                    <span
-                      className="w-2 h-2 rounded-full mt-2 shrink-0"
-                      style={{ backgroundColor: 'var(--accent-blue)' }}
-                    />
-                    <span>{item}</span>
-                  </li>
-                </SectionEntry>
+                <HighlightItem key={i} item={item} index={i} />
               ))}
             </ul>
           </div>

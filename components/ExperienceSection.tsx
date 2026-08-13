@@ -16,7 +16,7 @@ function ExperienceCard({
   return (
     <motion.div
       ref={ref}
-      className="glass-card rounded-2xl p-5 sm:p-6 flex flex-col justify-between space-y-4"
+      className="glass-card rounded-2xl p-4 sm:p-5 lg:p-6 flex flex-col justify-between space-y-3.5 sm:space-y-4"
       initial={{ opacity: 0, y: 22 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -98,7 +98,7 @@ export default function ExperienceSection() {
   return (
     <section
       id="experience"
-      className="py-8 sm:py-10 px-5 sm:px-6 lg:px-8 relative overflow-hidden"
+      className="py-12 sm:py-16 md:py-20 lg:py-24 px-5 sm:px-8 lg:px-12 relative overflow-hidden"
       style={{ backgroundColor: 'var(--bg-secondary)' }}
     >
       {/* Subtle full-bleed background */}
@@ -112,9 +112,9 @@ export default function ExperienceSection() {
         }}
       />
 
-      <div className="max-w-[95rem] mx-auto space-y-8 relative z-10">
+      <div className="max-w-[95rem] mx-auto space-y-8 sm:space-y-10 relative z-10">
         {/* Header */}
-        <div ref={headerRef} className="space-y-3 max-w-4xl">
+        <div ref={headerRef} className="space-y-2.5 sm:space-y-3 max-w-4xl">
           <motion.p
             className="section-label text-xs sm:text-sm"
             initial={{ opacity: 0, x: -14 }}
@@ -124,7 +124,7 @@ export default function ExperienceSection() {
             04 // Experience & Operations
           </motion.p>
           <motion.h2
-            className="text-2xl sm:text-4xl lg:text-5xl font-extrabold leading-tight whitespace-normal md:whitespace-nowrap"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight"
             style={{ color: 'var(--text-primary)' }}
             initial={{ opacity: 0, y: 16 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -133,7 +133,7 @@ export default function ExperienceSection() {
             Work & Practical Experience
           </motion.h2>
           <motion.p
-            className="text-base sm:text-lg leading-relaxed max-w-2xl"
+            className="text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl"
             style={{ color: 'var(--text-secondary)' }}
             initial={{ opacity: 0, y: 12 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}

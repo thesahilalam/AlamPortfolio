@@ -24,47 +24,47 @@ function ServiceCard({
   return (
     <motion.div
       ref={ref}
-      className="glass-card rounded-2xl p-6 sm:p-8 flex flex-col gap-5 group relative overflow-hidden"
+      className="glass-card rounded-2xl p-5 sm:p-6 lg:p-7 flex flex-col gap-4 sm:gap-5 group relative overflow-hidden"
       initial={{ opacity: 0, y: 22 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.5, ease: 'easeOut', delay: (index % 2) * 0.08 }}
       whileHover={{ y: -3, transition: { duration: 0.2 } }}
     >
       {/* Icon + Title */}
-      <div className="flex items-start gap-4">
+      <div className="flex items-start gap-3.5 sm:gap-4">
         <div
-          className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0"
+          className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center shrink-0"
           style={{
             backgroundColor: `${service.color}15`,
             border: `1px solid ${service.color}35`,
           }}
         >
-          <Icon size={22} style={{ color: service.color }} />
+          <Icon size={20} className="sm:w-[22px] sm:h-[22px]" style={{ color: service.color }} />
         </div>
         <div>
           <h3
-            className="text-lg sm:text-xl font-bold tracking-tight"
+            className="text-base sm:text-lg lg:text-xl font-bold tracking-tight"
             style={{ color: 'var(--text-primary)' }}
           >
             {service.title}
           </h3>
           <div
-            className="w-10 h-0.5 mt-2 rounded-full"
+            className="w-8 sm:w-10 h-0.5 mt-1.5 sm:mt-2 rounded-full"
             style={{ backgroundColor: service.color }}
           />
         </div>
       </div>
 
       {/* Offerings list */}
-      <ul className="space-y-3 flex-1 pt-1">
+      <ul className="space-y-2.5 sm:space-y-3 flex-1 pt-1">
         {service.items.map((item, i) => (
           <li
             key={i}
-            className="flex items-start gap-3 text-sm sm:text-base leading-relaxed"
+            className="flex items-start gap-2.5 sm:gap-3 text-xs sm:text-sm lg:text-base leading-relaxed"
             style={{ color: 'var(--text-secondary)' }}
           >
             <span
-              className="w-2 h-2 rounded-full mt-2 shrink-0"
+              className="w-1.5 h-1.5 rounded-full mt-2 shrink-0"
               style={{ backgroundColor: service.color }}
             />
             <span>{item}</span>
@@ -74,14 +74,14 @@ function ServiceCard({
 
       {/* Tooling / Skill Badges inside Card */}
       <div className="pt-3 border-t space-y-2" style={{ borderColor: 'var(--border)' }}>
-        <p className="text-xs font-mono uppercase tracking-wider font-semibold" style={{ color: 'var(--text-muted)' }}>
+        <p className="text-[11px] sm:text-xs font-mono uppercase tracking-wider font-semibold" style={{ color: 'var(--text-muted)' }}>
           Tooling & Technical Stack:
         </p>
-        <div className="flex items-center gap-2 flex-wrap">
+        <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
           {service.skills?.map((skill, sIdx) => (
             <span
               key={sIdx}
-              className="text-xs font-mono px-3 py-1 rounded-md transition-colors"
+              className="text-[11px] sm:text-xs font-mono px-2.5 py-1 rounded-md transition-colors"
               style={{
                 backgroundColor: 'rgba(59, 130, 246, 0.08)',
                 border: '1px solid var(--border)',
@@ -105,7 +105,7 @@ export default function ServicesSection() {
   return (
     <section
       id="services"
-      className="py-10 sm:py-14 px-5 sm:px-6 lg:px-8 relative overflow-hidden"
+      className="py-12 sm:py-16 md:py-20 lg:py-24 px-5 sm:px-8 lg:px-12 relative overflow-hidden"
       style={{ backgroundColor: 'var(--bg-primary)' }}
     >
       {/* Subtle full-bleed background */}
@@ -119,9 +119,9 @@ export default function ServicesSection() {
         }}
       />
 
-      <div className="max-w-[95rem] mx-auto space-y-10 relative z-10">
+      <div className="max-w-[95rem] mx-auto space-y-8 sm:space-y-10 relative z-10">
         {/* Header */}
-        <div ref={headerRef} className="space-y-3 max-w-4xl">
+        <div ref={headerRef} className="space-y-2.5 sm:space-y-3 max-w-4xl">
           <motion.p
             className="section-label text-xs sm:text-sm"
             initial={{ opacity: 0, x: -14 }}
@@ -131,7 +131,7 @@ export default function ServicesSection() {
             03 // Capabilities & Technical Services
           </motion.p>
           <motion.h2
-            className="text-2xl sm:text-4xl lg:text-5xl font-extrabold leading-tight whitespace-normal md:whitespace-nowrap"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight"
             style={{ color: 'var(--text-primary)' }}
             initial={{ opacity: 0, y: 16 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -140,7 +140,7 @@ export default function ServicesSection() {
             Technical Expertise & Services
           </motion.h2>
           <motion.p
-            className="text-base sm:text-lg leading-relaxed max-w-2xl"
+            className="text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl"
             style={{ color: 'var(--text-secondary)' }}
             initial={{ opacity: 0, y: 12 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -151,7 +151,7 @@ export default function ServicesSection() {
         </div>
 
         {/* Services & Skills Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-6 lg:gap-8">
           {SERVICES.map((service, i) => (
             <ServiceCard key={service.id} service={service} index={i} />
           ))}
@@ -159,10 +159,10 @@ export default function ServicesSection() {
 
         {/* Bottom Banner */}
         <div
-          className="glass-card rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-5"
+          className="glass-card rounded-2xl p-5 sm:p-7 lg:p-8 flex flex-col sm:flex-row items-center justify-between gap-5"
         >
           <div className="space-y-1 text-center sm:text-left">
-            <p className="text-base sm:text-lg font-bold" style={{ color: 'var(--text-primary)' }}>
+            <p className="text-sm sm:text-base md:text-lg font-bold" style={{ color: 'var(--text-primary)' }}>
               Have a specific security audit or infrastructure requirement in mind?
             </p>
             <p className="text-xs sm:text-sm" style={{ color: 'var(--text-secondary)' }}>

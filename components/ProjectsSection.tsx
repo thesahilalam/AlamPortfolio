@@ -210,7 +210,7 @@ export default function ProjectsSection() {
   return (
     <section
       id="projects"
-      className="py-8 sm:py-10 px-5 sm:px-6 lg:px-8 relative overflow-hidden"
+      className="py-12 sm:py-16 md:py-20 lg:py-24 px-5 sm:px-8 lg:px-12 relative overflow-hidden"
       style={{ backgroundColor: 'var(--bg-primary)' }}
     >
       {/* Subtle background portrait */}
@@ -224,10 +224,10 @@ export default function ProjectsSection() {
         }}
       />
 
-      <div className="max-w-[95rem] mx-auto space-y-8 relative z-10">
+      <div className="max-w-[95rem] mx-auto space-y-8 sm:space-y-10 relative z-10">
 
         {/* Header */}
-        <div ref={headerRef} className="space-y-3 max-w-4xl">
+        <div ref={headerRef} className="space-y-2.5 sm:space-y-3 max-w-4xl">
           <motion.p
             className="section-label text-xs sm:text-sm"
             initial={{ opacity: 0, x: -14 }}
@@ -237,7 +237,7 @@ export default function ProjectsSection() {
             02 // Featured Work
           </motion.p>
           <motion.h2
-            className="text-2xl sm:text-4xl lg:text-5xl font-extrabold leading-tight whitespace-normal md:whitespace-nowrap"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight"
             style={{ color: 'var(--text-primary)' }}
             initial={{ opacity: 0, y: 16 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -246,7 +246,7 @@ export default function ProjectsSection() {
             Completed Systems & Security Tools
           </motion.h2>
           <motion.p
-            className="text-base sm:text-lg leading-relaxed max-w-2xl"
+            className="text-sm sm:text-base md:text-lg leading-relaxed max-w-2xl"
             style={{ color: 'var(--text-secondary)' }}
             initial={{ opacity: 0, y: 12 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}

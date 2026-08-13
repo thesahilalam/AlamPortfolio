@@ -93,11 +93,12 @@ export default function HeroSection() {
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={slide.image}
+            src="/images/portrait-3.webp"
             alt={`${PROFILE.name} - Hero Image`}
             loading="eager"
-            // @ts-expect-error fetchpriority attribute
-            fetchpriority="high"
+            fetchPriority="high"
+            width={1920}
+            height={1080}
             className="w-full h-full object-cover object-right-top filter brightness-[0.95] contrast-[1.05]"
           />
 
@@ -182,9 +183,12 @@ export default function HeroSection() {
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={slide.image}
+                src="/images/portrait-3-mobile.webp"
                 alt={PROFILE.name}
                 loading="eager"
+                fetchPriority="high"
+                width={800}
+                height={450}
                 className="w-full h-full object-cover object-top filter brightness-[0.98]"
               />
             </motion.div>
@@ -282,6 +286,7 @@ export default function HeroSection() {
       {/* Scroll Down Indicator */}
       <a
         href="#about"
+        aria-label="Scroll to About section"
         className="absolute bottom-7 right-5 sm:right-8 lg:right-12 z-30 flex items-center gap-2 text-xs font-mono transition-colors"
         style={{ color: 'var(--text-muted)' }}
       >
