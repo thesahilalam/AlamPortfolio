@@ -122,8 +122,7 @@ export default function ContactSection() {
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.45, delay: 0.15 }}
               >
-                Open to cybersecurity internships, IT infrastructure contracts, freelance projects,
-                and technical collaborations. Feel free to reach out through any channel below.
+                Open to cybersecurity internships, IT networking projects, freelance work, and technical collaborations. Reach out through any channel below.
               </motion.p>
             </div>
 
@@ -135,7 +134,8 @@ export default function ContactSection() {
             >
               <a
                 href={PROFILE.resume}
-                download="Sahil_Alam_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="hidden md:inline-flex items-center gap-2.5 px-6 py-3 rounded-full text-white text-sm font-semibold transition-all group"
                 style={{
                   background: 'linear-gradient(135deg, var(--accent-blue), #1d4ed8)',
@@ -151,7 +151,7 @@ export default function ContactSection() {
                 }
               >
                 <Download size={15} />
-                Download Resume
+                View Resume
                 <ArrowRight size={14} className="opacity-70 group-hover:translate-x-1 transition-transform" />
               </a>
             </motion.div>

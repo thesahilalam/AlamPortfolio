@@ -146,7 +146,7 @@ export default function ServicesSection() {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.45, delay: 0.15 }}
           >
-            A unified overview of hands-on technical capabilities, infrastructure services, and the security tooling I utilize.
+            Overview of technical services, IT support capabilities, and security tools I work with.
           </motion.p>
         </div>
 
@@ -163,10 +163,10 @@ export default function ServicesSection() {
         >
           <div className="space-y-1 text-center sm:text-left">
             <p className="text-sm sm:text-base md:text-lg font-bold" style={{ color: 'var(--text-primary)' }}>
-              Have a specific security audit or infrastructure requirement in mind?
+              Need help with a network setup, security audit, or custom tool?
             </p>
             <p className="text-xs sm:text-sm" style={{ color: 'var(--text-secondary)' }}>
-              Let&apos;s talk scope, timelines, and how I can help solve it.
+              Let&apos;s discuss your requirements and how I can help.
             </p>
           </div>
           <a

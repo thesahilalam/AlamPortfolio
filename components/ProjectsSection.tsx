@@ -252,7 +252,7 @@ export default function ProjectsSection() {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.45, delay: 0.15 }}
           >
-            Security utilities, desktop software, and enterprise simulations — built, tested, and working.
+            Practical security utilities and desktop software—built, tested, and working.
           </motion.p>
         </div>
 

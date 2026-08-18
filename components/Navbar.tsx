@@ -228,7 +228,8 @@ export default function Navbar() {
             {/* Desktop Resume CTA */}
             <a
               href={PROFILE.resume}
-              download="Sahil_Alam_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="ml-1 flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-white text-xs font-semibold transition-all"
               style={{
                 background: 'linear-gradient(135deg, var(--accent-blue), #1d4ed8)',

@@ -39,12 +39,12 @@ export const SLIDES: Slide[] = [
     image: '/images/portrait-2.jpg',
     badge: {
       icon: Terminal,
-      text: 'Security & Systems Engineering',
+      text: 'Security & Networking',
       color: '#3b82f6',
     },
     title: 'Security. Networks. Solutions.',
-    subtitle: 'Practical Architecture · Lab Tested',
-    description: 'Building practical tools and infrastructure that work — not just theory. From automated reconnaissance to vulnerability mapping.',
+    subtitle: 'Practical Security · Lab Tested',
+    description: 'Building practical tools for network scanning, packet analysis, and security testing.',
     tags: ['Network Auditing', 'Packet Inspection', 'Linux Security', 'Vulnerability Intel'],
     isHeroPrimary: false,
   },
@@ -53,12 +53,12 @@ export const SLIDES: Slide[] = [
     image: '/images/portrait-1.jpg',
     badge: {
       icon: Cpu,
-      text: 'Hands-on Innovation',
+      text: 'Building & Experimenting',
       color: '#a855f7',
     },
     title: 'Always Learning. Always Building.',
-    subtitle: 'From Wireless Labs to Desktop Apps',
-    description: 'From wireless security labs to cross-platform desktop apps — hands-on, practical, real. Engineering software utilities that solve real-world problems.',
+    subtitle: 'Security Labs & Desktop Utilities',
+    description: 'Creating lightweight desktop apps and security scripts to solve everyday technical challenges.',
     tags: ['EncoGuard CLI', 'EncoPDF Parallel Engine', 'EncoXaudio Tauri/Rust'],
     isHeroPrimary: false,
   },
@@ -212,7 +212,8 @@ export default function HeroSection() {
               >
                 <a
                   href={PROFILE.resume}
-                  download="Sahil_Alam_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex items-center gap-2 px-6 py-3 rounded-full text-white text-sm font-semibold transition-all group"
                   style={{
                     background: 'linear-gradient(135deg, var(--accent-blue), #1d4ed8)',
@@ -226,7 +227,7 @@ export default function HeroSection() {
                   }}
                 >
                   <Download size={15} />
-                  Download Resume
+                  View Resume
                 </a>
 
                 <a

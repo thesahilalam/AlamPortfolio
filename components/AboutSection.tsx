@@ -6,12 +6,11 @@ import { GraduationCap, CheckCircle2 } from 'lucide-react';
 import { PROFILE, EDUCATION } from '@/lib/data';
 
 const HIGHLIGHTS = [
-  'Hands-on pentesting with Nmap, Metasploit, Burp Suite & Wireshark in Kali Linux lab environments',
-  'Wireless security research: WPA/WPS testing, monitor mode, handshake capture & .cap file analysis',
-  'Built EncoGuard — a complete Python/Nmap security auditing tool with CVE/NVD intelligence',
-  'Hands-on networking: router config, LAN setup, CCTV/DVR/NVR/IP camera installation',
-  'AI-assisted development workflow: design → build → test → deploy working applications',
-  'Currently exploring: Android network utilities and wireless security automation',
+  'Security testing with Nmap, Metasploit, Burp Suite, and Wireshark in Kali Linux labs',
+  'Wi-Fi security testing: WPA/WPS audits, monitor mode, and handshake capture',
+  'Built EncoGuard: a Python tool that scans ports and checks for known CVE vulnerabilities',
+  'Network & hardware setup: routers, switches, LANs, and IP/CCTV cameras',
+  'Prototyping workflow: designing, building, testing, and deploying tools',
 ];
 
 function HighlightItem({

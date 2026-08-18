@@ -139,7 +139,7 @@ export default function ExperienceSection() {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.45, delay: 0.15 }}
           >
-            Hands-on internships, IT technical operations, and enterprise simulations.
+            Internships, hands-on IT operations, and practical simulations.
           </motion.p>
         </div>
 
