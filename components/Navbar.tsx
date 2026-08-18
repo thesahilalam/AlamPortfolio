@@ -1,10 +1,11 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { Download, Github, Linkedin, Instagram, Menu, X, Sun, Moon } from 'lucide-react';
 import { useTheme } from './ThemeProvider';
 import { PROFILE } from '@/lib/data';
+import MobileMenu from './MobileMenu';
 
 const NAV_LINKS = [
   { label: 'About', href: '#about', id: 'about' },
@@ -271,64 +272,13 @@ export default function Navbar() {
         </div>
       </motion.header>
 
-      {/* Mobile Drawer (NO Resume Download Button on Mobile as requested) */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            className="fixed inset-0 z-40 flex flex-col items-center justify-center gap-7"
-            style={{ backgroundColor: 'rgba(6,6,8,0.97)', backdropFilter: 'blur(20px)' }}
-            initial={{ opacity: 0, y: -16 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -16 }}
-            transition={{ duration: 0.2 }}
-          >
-            {NAV_LINKS.map(link => (
-              <a
-                key={link.label}
-                href={link.href}
-                onClick={() => setMobileOpen(false)}
-                className="text-2xl font-semibold transition-colors"
-                style={{
-                  color: activeSection === link.id ? 'var(--accent-blue)' : 'var(--text-secondary)',
-                }}
-              >
-                {link.label}
-              </a>
-            ))}
-
-            {/* Social icons in mobile drawer */}
-            <div className="flex items-center gap-4 pt-4 border-t border-white/10">
-              <a
-                href={PROFILE.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="GitHub"
-                className="p-2 text-white/70 hover:text-white"
-              >
-                <Github size={20} />
-              </a>
-              <a
-                href={PROFILE.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="LinkedIn"
-                className="p-2 text-white/70 hover:text-white"
-              >
-                <Linkedin size={20} />
-              </a>
-              <a
-                href={PROFILE.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-                className="p-2 text-white/70 hover:text-white"
-              >
-                <Instagram size={20} />
-              </a>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* Mobile Drawer */}
+      <MobileMenu
+        isOpen={mobileOpen}
+        onClose={() => setMobileOpen(false)}
+        activeSection={activeSection}
+        navLinks={NAV_LINKS}
+      />
     </>
   );
 }
